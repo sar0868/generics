@@ -20,11 +20,14 @@ public class Box<T extends Fruit> {
         }
         ArrayList<T> shift = new ArrayList<>();
         for (int i = 0; i < countShift; i++) {
-            shift.add(objects.get(i));
+//            shift.add(objects.get(i));
+            //Единственное что, цикл можно упростить --- метод remove возвращает значение,
+            // которые вы достали, поэтому можно сразу так:
+            shift.add(objects.remove(0));
         }
-        for (int i = 0; i < countShift ; i++) {
-            objects.remove(0);
-        }
+//        for (int i = 0; i < countShift ; i++) {
+//            objects.remove(0);
+//        }
         return shift;
     }
 
